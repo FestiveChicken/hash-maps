@@ -1,28 +1,34 @@
-# hash-maps
+# 🗺️ JavaScript HashMap
 
-1. Start by creating a HashMap class or factory function. It’s up to you which you want to use. Then proceed to create the following methods: hash(key) takes a key and produces a hash code with it. We did implement a fairly good hash function in the previous lesson. You are free to use that, or if you wish, you can conduct your own research. Beware, this is a deep deep rabbit hole.
+A simple client‑side implementation of a hash map (hash table) in JavaScript, built to practice hashing functions, collision handling, and basic data structure design without relying on built‑in Map objects.
 
-2. Hash maps could accommodate various data types for keys like numbers, strings, objects. But for this project, only handle keys of type strings.
+## 🛠️ Features
+- **HashMap Class** with configurable bucket size  
+- **`_hash(key)`** private method generating an index from a string key  
+- **`set(key, value)`** to add or update entries  
+- **`get(key)`** to retrieve values by key  
+- **`remove(key)`** to delete entries  
+- **`has(key)`** to check existence of a key  
+- **`keys()`** and **`values()`** methods to list all stored keys or values  
+- **Collision Handling** via separate chaining (arrays in each bucket)  
+- Automatic **resize** when load factor exceeds threshold (optional bonus)
 
-3. set(key, value) takes two arguments, the first is a key and the second is a value that is assigned to this key. If a key already exists, then the old value is overwritten.
-    Remember to grow your buckets size when it needs to, by calculating if your bucket has reached the load factor.
-    get(key) takes one argument as a key and returns the value that is assigned to this key. If a key is not found, return null.
+## 🧠 What I Learned
+- Designing a **hash function** to distribute string keys across buckets  
+- Implementing **collision resolution** using separate chaining  
+- Managing **load factor** and resizing strategies for performance  
+- Building a custom data structure without built‑in Map or Object shortcuts  
+- Traversing buckets to implement `keys()`, `values()`, and `remove()` operations  
 
-4. has(key) takes a key as an argument and returns true or false based on whether or not the key is in the hash map.
+## 📚 Assignment Summary
+This project from The Odin Project’s JavaScript curriculum guided me to:
+1. Create a `HashMap` class with an internal array of buckets.  
+2. Write a private `_hash(key)` method to convert keys into bucket indices.  
+3. Implement `set`, `get`, `remove`, and `has` methods, handling collisions via chaining.  
+4. (Optional) Track load factor and resize the bucket array to maintain O(1) average operations.  
+5. Write `keys()` and `values()` to retrieve all stored entries.  
+6. Test functionality by adding, retrieving, removing, and listing entries in the console.
 
-5. remove(key) takes a key as an argument. If the given key is in the hash map, it should remove the entry with that key and return true. If the key isn’t in the hash map, it should return false.
+---
 
-6. length() returns the number of stored keys in the hash map.
-
-7. clear() removes all entries in the hash map.
-
-8. keys() returns an array containing all the keys inside the hash map.
-
-9. values() returns an array containing all the values.
-
-10. entries() returns an array that contains each key, value pair. Example: [[firstKey, firstValue], [secondKey, secondValue]]
-
-Remember that a hash map does not preserve insertion order when you are retrieving your hash map’s data. It is normal and expected for keys and values to appear out of the order you inserted them in.
-
-Extra Credit: 
-Create a class HashSet that behaves the same as a HashMap but only contains keys with no values.
+Built with ❤️ by [FestiveChicken](https://github.com/FestiveChicken)
